@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego Car Test</title>
+</head>
+
+
+
+
+<body>
+
+    <!-- ---------- ********** HEADER ********** ---------- -->
+
+
+    <header class="header">
+        <div class="header--div__BACK"></div>
+
+
+
+        <nav class="header--nav">
+            <a class="header--a__LOGO" href="#">
+                <img class="header--img__LOGO" src=<%=require("./images/logo.svg")%> alt="logo">
+            </a>
+
+            <ul class="header--ul">
+                <li class="header--li">
+                    <a class="header--a__MENU" href="#">Автомобили в наличии</a>
+                </li>
+                <li class="header--li">
+                    <a class="header--a__MENU" href="#">Спецпредложения</a>
+                </li>
+                <li class="header--li">
+                    <a class="header--a__MENU" href="#">Продать авто</a>
+                </li>
+                <li class="header--li">
+                    <a class="header--a__MENU" href="#">Сервис</a>
+                </li>
+                <li class="header--li">
+                    <a class="header--a__MENU" href="#">Контакты</a>
+                </li>
+                <li class="header--li">
+                    <button class="header--button__MOB">Заказать звонок</button>
+                </li>
+                <li class="header--li">
+                    <a class="header--a__GEOMOB" href="https://yandex.ru/maps/?ll=37.622567,55.784277&z=17&l=map">
+                        <img class="header--img__GEO" src=<%=require("./images/map-pin.svg")%> alt="знак геолокации">
+                        <p class="header--p__GEO">Олимпийский просп., 5, стр. 1, Москва</p>
+                    </a>
+                </li>
+                <li class="header--li">
+                    <a class="header--a__GEOMOB" href="https://yandex.ru/maps/?rtext=~55.784277,37.622567">
+                        <img class="header--img__GEO" src=<%=require("./images/vector.svg")%> alt="знак маршрута">
+                        <p class="header--p__GEO">Проложить маршрут</p>
+                    </a>
+                </li>
+            </ul>
+
+            <button class="header--button">Заказать звонок</button>
+
+            <button class="header--button__BURGER">
+                <svg class="header--svg" width="35px" height="35px" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line class="header--line" x1="5" y1="25" x2="95" y2="25" stroke="hsl(210, 84%, 27%)" stroke-width="11" />
+                    <line class="header--line" x1="5" y1="50" x2="95" y2="50" stroke="hsl(210, 84%, 27%)" stroke-width="11" />
+                    <line class="header--line" x1="5" y1="75" x2="95" y2="75" stroke="hsl(210, 84%, 27%)" stroke-width="11" />
+                </svg>
+            </button>
+        </nav>
+
+
+
+        <div class="header--div__LINE"></div>
+
+
+
+        <div class="header--div__INFO">
+            <a class="header--a__GEO" href="https://yandex.ru/maps/?ll=37.622567,55.784277&z=17&l=map">
+                <img class="header--img__GEO" src=<%=require("./images/map-pin.svg")%> alt="знак геолокации">
+                <p class="header--p__GEO">Олимпийский просп., 5, стр. 1, Москва</p>
+            </a>
+
+            <a class="header--a__GEO" href="https://yandex.ru/maps/?rtext=~55.784277,37.622567">
+                <img class="header--img__GEO" src=<%=require("./images/vector.svg")%> alt="знак маршрута">
+                <p class="header--p__GEO">Проложить маршрут</p>
+            </a>
+
+            <div class="header--a__GEO" href="#">
+                <img class="header--img__GEO" src=<%=require("./images/clock.svg")%> alt="часы">
+                <p class="header--p__GEO">9:00 - 21:00 (ежедневно)</p>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <!-- ---------- ********** MAIN ********** ---------- -->
+
+    <main class="main">
+        <h1 class="main--h1">
+            Теперь услуги дилерского центра Вы можете получить онлайн!
+        </h1>
+
+
+
+        <div class="main--div__CONTAINER">
+            <div class="main--div__MEDIA CARS">
+                <div class="main--div__TEXT">
+                    <h2 class="main--h2">
+                        Диагностика автомобиля
+                        перед покупкой
+                    </h2>
+                    <p class="main--p">
+                        Расскажем обо всех скрытых дефектах автомобиля с пробегом
+                    </p>
+                    <button class="main--button">Записаться</button>
+                </div>
+                <picture class="main--picture__CARS">
+                    <source srcset="<%=require("./images/cars4.png")%>, <%=require("./images/cars4-2.png")%> 2x" media="(min-width: 1200px)">
+                    <source srcset="<%=require("./images/cars3.png")%>, <%=require("./images/cars3-2.png")%> 2x" media="(min-width: 900px)">
+                    <source srcset="<%=require("./images/cars2.png")%>, <%=require("./images/cars2-2.png")%> 2x" media="(min-width: 600px)">
+                    <source srcset="<%=require("./images/cars1.png")%>, <%=require("./images/cars1-2.png")%> 2x">
+                    <img class="main--img" src=<%=require("./images/cars4.png")%> alt="2 автомобиля">
+                </picture>
+            </div>
+
+
+            <div class="main--div__MEDIA KIA">
+                <div class="main--div__TEXT">
+                    <h2 class="main--h2">
+                        Онлайн показ автомобиля по видеосвязи
+                    </h2>
+                    <p class="main--p">
+                        Проведем онлайн-показ интересующего автомобиля в удобное для Вас время
+                    </p>
+                    <button class="main--button">Оставить заявку</button>
+                </div>
+                <picture class="main--picture__KIA">
+                    <source srcset="<%=require("./images/kia4.png")%>, <%=require("./images/kia4-2.png")%> 2x" media="(min-width: 1200px)">
+                    <source srcset="<%=require("./images/kia3.png")%>, <%=require("./images/kia3-2.png")%> 2x" media="(min-width: 900px)">
+                    <source srcset="<%=require("./images/kia2.png")%>, <%=require("./images/kia2-2.png")%> 2x" media="(min-width: 600px)">
+                    <source srcset="<%=require("./images/kia1.png")%>, <%=require("./images/kia1-2.png")%> 2x">
+                    <img class="main--img" src=<%=require("./images/kia4.png")%> alt="2 автомобиля">
+                </picture>
+                <img class="main--img__BACK" src=<%=require("./images/kia4back2.svg")%> alt="знак play">
+            </div>
+
+
+            <div class="main--div__MEDIA PHONE">
+                <div class="main--div__TEXT">
+                    <h2 class="main--h2">
+                        Онлайн бронирование
+                    </h2>
+                    <p class="main--p">
+                        Забронируйте понравившийся автомобиль без визита в дилерский центр
+                    </p>
+                    <button class="main--button">Забронировать</button>
+                </div>
+                <picture class="main--picture__PHONE">
+                    <source srcset="<%=require("./images/phone4.png")%>, <%=require("./images/phone4-2.png")%> 2x" media="(min-width: 1200px)">
+                    <source srcset="<%=require("./images/phone3.png")%>, <%=require("./images/phone3-2.png")%> 2x" media="(min-width: 900px)">
+                    <source srcset="<%=require("./images/phone2.png")%>, <%=require("./images/phone2-2.png")%> 2x" media="(min-width: 600px)">
+                    <source srcset="<%=require("./images/phone1.png")%>, <%=require("./images/phone1-2.png")%> 2x">
+                    <img class="main--img" src=<%=require("./images/phone4.png")%> alt="2 автомобиля">
+                </picture>
+            </div>
+
+
+            <div class="main--div__MEDIA MERS">
+                <div class="main--div__TEXT">
+                    <h2 class="main--h2">
+                        Онлайн оценка автомобиля с пробегом
+                    </h2>
+                    <p class="main--p">
+                        Узнайте предварительную стоимость автомобиля за 1 мин, указав его параметры
+                    </p>
+                    <button class="main--button">Оценить</button>
+                </div>
+                <picture class="main--picture__MERS">
+                    <source srcset="<%=require("./images/mers4.png")%>, <%=require("./images/mers4-2.png")%> 2x" media="(min-width: 1200px)">
+                    <source srcset="<%=require("./images/mers3.png")%>, <%=require("./images/mers3-2.png")%> 2x" media="(min-width: 900px)">
+                    <source srcset="<%=require("./images/mers2.png")%>, <%=require("./images/mers2-2.png")%> 2x" media="(min-width: 600px)">
+                    <source srcset="<%=require("./images/mers1.png")%>, <%=require("./images/mers1-2.png")%> 2x">
+                    <img class="main--img" src=<%=require("./images/mers4.png")%> alt="2 автомобиля">
+                </picture>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

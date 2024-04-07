@@ -1,0 +1,1244 @@
+
+/* ---------- **********  ШРИФТЫ  ********** ---------- */
+
+
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter Regular'), local('Inter-Regular'),
+        url('./fonts/Inter-Regular.woff2') format('woff2'),
+        url('./fonts/Inter-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter Medium'), local('Inter-Medium'),
+        url('./fonts/Inter-Medium.woff2') format('woff2'),
+        url('./fonts/Inter-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+
+
+@font-face {
+	font-family: 'Inter';
+	src: local('Inter SemiBold'), local('Inter-SemiBold'),
+        url('./fonts/Inter-SemiBold.woff2') format('woff2'),
+        url('./fonts/Inter-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+}
+
+
+
+
+
+
+
+/* ---------- **********  ГЛОБАЛЬНЫЕ СВОЙСТВА  ********** ---------- */
+
+
+:root {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+}
+/* --- *** класс для фиксации страницы при
+открытии мобильного меню *** --- */
+.body__fixed {
+    overflow: hidden;
+}
+/**/
+
+
+
+
+
+
+
+/* ---------- **********  HEADER  ********** ---------- */
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: 0 4px 4px hsla(0, 0%, 0%, 25%);
+    transition: padding 0.3s;
+
+    @media (min-width: 900px) {
+        box-shadow: 0 4px 6px hsla(0, 0%, 0%, 15%);
+    }
+
+    @media (min-width: 1200px) {
+        box-shadow: 0 4px 4px hsla(0, 0%, 0%, 25%);
+    }
+}
+/* --- *** класс для придания полупрозрачности
+шапке при скролле *** --- */
+.header__blur {
+    padding: 2px 0;
+    background-color: hsla(0, 0%, 98%, 90%);
+    backdrop-filter: blur(10px);
+}
+/**/
+
+
+
+
+/* --- *** классы для открытия заднего фона шапки
+мобильного меню *** --- */
+.header--div__BACK {
+    position: absolute;
+    top: 0;
+    left: -200vw;
+    z-index: 3;
+    width: 100vw;
+    height: 60px;
+    background-color: hsla(0, 0%, 70%, 98%);
+    transition: left 0.6s;
+
+    @media (min-width: 600px) {
+        height: 64px;
+    }
+
+    @media (min-width: 1200px) {
+        display: none;
+    }
+}
+.header__rise {
+    height: 64px;
+
+    @media (min-width: 600px) {
+        height: 68px;
+    }
+}
+.header__backopen {
+    left: 0;
+}
+/**/
+
+
+
+
+/* --- *** NAV *** --- */
+
+
+.header--nav {
+    margin: 0 auto;
+    padding: 12.5px 0;
+    display: flex;
+    align-items: center;
+    width: 89.33vw;
+
+    @media (min-width: 600px) {
+        padding: 12px 0;
+        width: 88.54vw;
+    }
+
+    @media (min-width: 900px) {
+        width: 81.92vw;
+    }
+
+    @media (min-width: 1040px) {
+        width: 852px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 90.9vw;
+    }
+
+    @media (min-width: 1320px) {
+        width: 1300px;
+    }
+}
+
+
+
+
+.header--a__LOGO {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+
+
+
+.header--img__LOGO {
+    width: 209px;
+}
+
+
+
+
+.header--ul {
+    padding: 100px 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: -200vw;
+    z-index: 2;
+    width: 100%;
+    background-color: hsla(0, 0%, 80%, 98%);
+    list-style-type: none;
+    transition: left 0.6s;
+
+    @media (min-width: 1200px) {
+        margin-right: 4.24vw;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 2.42vw;
+        position: static;
+        width: auto;
+        background-color: transparent;
+    }
+
+    @media (min-width: 1320px) {
+        margin-right: 56px;
+        gap: 32px;
+    }
+}
+/* --- *** класс для появления мобильного меню *** --- */
+.header__open {
+    left: 0;
+    height: 100vh;
+    overflow-y: scroll;
+
+    @media (min-width: 1200px) {
+        height: auto;
+    }
+}
+/**/
+
+
+
+
+.header--li:nth-child(7),
+.header--li:nth-child(8) {
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+
+
+
+
+.header--a__MENU {
+    padding: 20px 0;
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.5;
+    color: hsl(0, 0%, 40%);
+    text-align: center;
+    text-decoration: none;
+    border-top: 1px solid hsl(0, 0%, 24%);
+
+    @media (min-width: 1200px) {
+        padding: 0;
+        width: auto;
+        font-size: 13px;
+        border: none;
+    }
+}
+@media (any-hover: hover) {
+    .header--a__MENU:hover {
+        color: hsl(0, 0%, 60%);
+    }
+}
+.header--a__MENU:active {
+    color: hsl(0, 0%, 65%);
+}
+
+
+
+
+.header--button__MOB {
+    margin: 10px 0 30px;
+    padding: 8px 50px;
+    display: block;
+    position: relative;
+    z-index: 3;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.7;
+    color: hsl(0, 0%, 100%);
+    background-color: hsla(0, 0%, 60%, 70%);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;    
+
+    @media (min-width: 600px) {
+        display: none;
+    }
+}
+.header--button__MOB:active {
+    background-color: hsla(0, 0%, 67%, 70%);
+}
+
+
+
+
+.header--a__GEOMOB {
+    padding: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: underline hsl(0, 0%, 40%);
+
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+.header--a__GEOMOB:active p {
+    color: hsl(0, 0%, 55%);
+    text-decoration: underline hsl(0, 0%, 65%);
+}
+
+
+
+
+.header--a__GEOMOB p {
+    font-size: 14px;
+}
+
+
+
+
+.header--button {
+    display: none;
+
+    @media (min-width: 600px) {
+        padding: 8px 39.5px;
+        display: block;
+        position: relative;
+        z-index: 3;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.7;
+        color: hsl(0, 0%, 100%);
+        background-color: hsl(210, 84%, 27%);
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    @media (min-width: 1320px) {
+        padding: 8px 42px;
+    }
+}
+@media (any-hover: hover) {
+    .header--button:hover {
+        background-color: hsl(210, 100%, 42%);
+    }
+}
+.header--button:active {
+    background-color: hsl(210, 100%, 52%);
+}
+
+
+
+
+.header--button__BURGER {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    background-color: transparent;
+    border: none;
+
+    @media (min-width: 600px) {
+        margin-left: 28px;
+    }
+
+    @media (min-width: 1200px) {
+        display: none;
+    }
+}
+
+
+
+
+/* --- *** стилизация svg кнопки-бургера *** --- */
+.header--line {
+    transform-box: fill-box;
+    transition: all 0.3s linear;
+}
+.header--line:first-of-type {
+    transform-origin: 82% 0%;
+}
+.header--line:last-of-type {
+    transform-origin: 77% 100%;
+}
+/**/
+
+
+
+
+/* --- *** классы для анимации кнопки-бургера *** --- */
+.line1 {
+    transform: rotate(-45deg) scale(0.85, 1) translate(-19%, 25%);
+}
+.line2 {
+    transform: translate(200%);
+}
+.line3 {
+    transform: rotate(45deg) scale(0.85, 1) translate(-15%, 29%);
+}
+/**/
+
+
+
+
+.header--div__LINE {
+    display: none;
+    height: 1px;
+    background-color: hsl(0, 0%, 81%);
+
+    @media (min-width: 900px) {
+        display: block;
+    }
+}
+
+
+
+
+/* --- *** INFO *** --- */
+
+
+.header--div__INFO {
+    display: none;
+
+    @media (min-width: 900px) {
+        margin: 0 auto;
+        padding: 12px 0;
+        display: flex;
+        align-items: center;
+        width: 81.92vw;
+    }
+
+    @media (min-width: 1040px) {
+        width: 852px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 90.9vw;
+    }
+
+    @media (min-width: 1320px) {
+        width: 1300px;
+    }
+}
+
+
+
+
+.header--a__GEO {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.header--a__GEO:first-child {
+    margin-right: 1.67vw;
+}
+.header--a__GEO:nth-of-type(2) {
+    margin-right: auto;
+}
+@media (any-hover: hover) {
+    .header--a__GEO:hover:not(.header--a__GEO:last-child) {
+        text-decoration: underline hsl(0, 0%, 40%);
+    }
+}
+.header--a__GEO:active:not(.header--a__GEO:last-child) {
+    text-decoration: underline hsl(0, 0%, 70%);
+}
+.header--a__GEO:active:not(.header--a__GEO:last-child) .header--p__GEO {
+    color: hsl(0, 0%, 60%);
+}
+
+
+
+
+.header--img__GEO {
+    margin-right: 0.417vw;
+    width: 16px;
+
+    @media (min-width: 900px) {
+        width: 1.54vw;
+    }
+
+    @media (min-width: 1040px) {
+        width: 16px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 1.21vw;
+    }
+
+    @media (min-width: 1320px) {
+        width: 16px;
+    }
+}
+
+
+
+.header--p__GEO {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    color: hsl(0, 0%, 40%);
+}
+
+
+
+
+
+
+
+
+/* ---------- **********  MAIN  ********** ---------- */
+
+
+/* --- *** ОБЩИЕ *** --- */
+
+
+.main {
+    margin: 96px auto 61.6vw;
+    width: 89.3vw;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+        margin: 120px auto 27.34vw;
+        width: 88.54vw;
+    }
+
+    @media (min-width: 900px) {
+        margin: 161px auto 26.73vw;
+        width: 81.92vw;
+    }
+
+    @media (min-width: 1040px) {
+        margin: 161px auto 284px;
+        width: 852px;
+    }
+
+    @media (min-width: 1200px) {
+        margin: 162px auto 21.06vw;
+        width: 90.9vw;
+    }
+
+    @media (min-width: 1320px) {
+        margin: 162px auto 278px;
+        width: 1300px;
+    }
+}
+
+
+
+
+.main--h1 {
+    margin-bottom: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    color: hsl(0, 0%, 24%);
+
+    @media (min-width: 600px) {
+        margin-bottom: 32px;
+        font-size: 24px;
+    }
+}
+
+
+
+
+.main--div__CONTAINER {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 89.3vw;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 3.2vw;
+
+    @media (min-width: 600px) {
+        grid-template-columns: 88.54vw;
+        grid-gap: 1.56vw;
+    }
+
+    @media (min-width: 900px) {
+        grid-template-columns: repeat(2, 40.38vw);
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 1.15vw;
+    }
+
+    @media (min-width: 1040px) {
+        grid-template-columns: repeat(2, 420px);
+        grid-gap: 12px;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 0 0.15vw;
+        grid-template-columns: repeat(3, 29.5vw);
+        grid-gap: 0.9vw;
+    }
+
+    @media (min-width: 1320px) {
+        padding: 0 2px;
+        grid-template-columns: repeat(3, 424px);
+        grid-gap: 12px;
+    }
+}
+
+
+
+
+.main--div__MEDIA {
+    padding: 16px 0 0 4.27vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 12px;
+
+    @media (min-width: 600px) {
+        padding: 32px 0 0 4.17vw;
+    }
+
+    @media (min-width: 900px) {
+        padding: 32px 0 0 3.08vw;
+    }
+
+    @media (min-width: 1040px) {
+        padding: 32px 0 0 32px;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 2.42vw 0 0 2.42vw;
+    }
+
+    @media (min-width: 1320px) {
+        padding: 32px 0 0 32px;
+    }
+}
+
+
+
+
+.main--h2 {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: hsl(0, 0%, 100%);
+
+    @media (min-width: 600px) {
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+}
+
+
+
+
+.main--p {
+    margin-bottom: 33px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: hsl(0, 0%, 100%);
+
+    @media (min-width: 600px) {
+        margin-bottom: 32px;
+    }
+
+    @media (min-width: 900px) {
+        font-size: 1.35vw;
+        line-height: 1.3;
+    }
+
+    @media (min-width: 1040px) {
+        font-size: 14px;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: 1vw;
+        line-height: 1.3vw;
+    }
+
+    @media (min-width: 1320px) {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+
+
+
+.main--button {
+    height: 41px;
+    width: 148px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: hsl(0, 0%, 100%);
+    background-color: transparent;
+    border: 1px solid hsl(0, 0%, 100%);
+    border-radius: 8px;
+    cursor: pointer;
+
+    @media (min-width: 600px) {
+        height: 45px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 180px;
+    }
+}
+@media (any-hover: hover) {
+    .main--button:hover {
+        background-color: hsla(0, 0%, 100%, 0.15);
+    }
+}
+.main--button:active {
+    background-color: hsla(0, 0%, 100%, 0.35);
+}
+
+
+
+
+.main--img {
+    width: 100%;
+}
+
+
+
+
+/* --- *** CARS *** --- */
+
+
+.CARS {
+    grid-column: span 1;
+    grid-row: 1 / 2;
+    background: url('./images/cars1back.png') center/cover no-repeat;
+    @media (min-resolution: 2dppx) {
+        background: url('./images/cars1-2back.png') center/cover no-repeat;
+    }
+
+    @media (min-width: 600px) {
+        background: url('./images/cars2back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/cars2-2back.png') center/cover no-repeat;
+        }
+    }
+
+    @media (min-width: 900px) {
+        grid-column: span 1;
+        grid-row: 1 / 2;
+        background: url('./images/cars3back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/cars3-2back.png') center/cover no-repeat;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        grid-column: span 1;
+        grid-row: 1 / 3;
+        background: url('./images/cars4back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/cars4-2back.png') center/cover no-repeat;
+        }
+    }
+}
+
+
+
+
+.CARS .main--div__TEXT {
+    margin: 0 9.33vw auto 0;
+
+    @media (min-width: 600px) {
+        margin: 0 44.53vw 3.08vw 0;
+    }
+
+    @media (min-width: 900px) {
+        margin: 0 7vw 3.08vw 0;
+    }
+
+    @media (min-width: 1200px) {
+        margin: 0 7vw auto 0;
+    }
+
+    @media (min-width: 1320px) {
+        margin: 0 97px auto 0;
+    }
+}
+
+
+
+
+.CARS .main--button {
+    @media (min-width: 1200px) {
+        width: 143px;
+    }
+}
+
+
+
+
+.main--picture__CARS {
+    position: absolute;
+    right: 2.6vw;
+    bottom: 0;
+    width: 39.73vw;
+
+    @media (min-width: 600px) {
+        width: 37.37vw;
+    }
+
+    @media (min-width: 900px) {
+        position: absolute;
+        right: 0;
+        left: 20vw;
+        bottom: 0;
+        width: 19.5vw;
+    }
+
+    @media (min-width: 1040px) {
+        left: 197px;
+        width: 217px;
+    }
+
+    @media (min-width: 1200px) {
+        position: relative;
+        left: -1.52vw;
+        width: 27vw;
+    }
+
+    @media (min-width: 1320px) {
+        width: 400px;
+    }
+}
+
+
+
+
+/* --- *** KIA *** --- */
+
+
+.KIA {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background: url('./images/kia1back.png') center/cover no-repeat;
+    @media (min-resolution: 2dppx) {
+        background: url('./images/kia1-2back.png') center/cover no-repeat;
+    }
+
+    @media (min-width: 600px) {
+        background: url('./images/kia2back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/kia2-2back.png') center/cover no-repeat;
+        }
+    }
+
+    @media (min-width: 900px) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        background: url('./images/kia3back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/kia3-2back.png') center/cover no-repeat;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        background: url('./images/kia4back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/kia4-2back.png') center/cover no-repeat;
+        }
+    }
+}
+
+
+
+
+.KIA .main--div__TEXT {
+    margin: 0 9.33vw 4.27vw 0;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 600px) {
+        margin: 0 35.53vw 4.17vw 0;
+    }
+
+    @media (min-width: 900px) {
+        margin: 0 4vw 3.08vw 0;
+    }
+
+    @media (min-width: 1040px) {
+        margin: 0 60px 32px 0;
+    }
+
+    @media (min-width: 1200px) {
+        margin: 0 4vw 3.71vw 0;
+    }
+
+    @media (min-width: 1320px) {
+        margin: 0 97px 49px 0;
+    }
+}
+
+
+
+
+.main--picture__KIA {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 39.73vw;
+
+    @media (min-width: 600px) {
+        width: 37.37vw;
+    }
+
+    @media (min-width: 900px) {
+        width: 20.86vw;
+    }
+
+    @media (min-width: 1040px) {
+        width: 217px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 12.88vw;
+    }
+
+    @media (min-width: 1320px) {
+        width: 170px;
+    }
+}
+
+
+
+
+.KIA .main--img__BACK {
+    display: none;
+
+    @media (min-width: 1200px) {
+        display: block;
+        position: absolute;
+        right: 4.32vw;
+        bottom: 0;
+        width: 14.77vw;
+    }
+
+    @media (min-width: 1320px) {
+        right: 57px;
+        width: 195px;
+    }
+}
+
+
+
+
+/* --- *** PHONE *** --- */
+
+
+.PHONE {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    background: url('./images/phone1back.png') center/cover no-repeat;
+    @media (min-resolution: 2dppx) {
+        background: url('./images/phone1-2back.png') center/cover no-repeat;
+    }
+
+    @media (min-width: 600px) {
+        background: url('./images/phone2back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/phone2-2back.png') center/cover no-repeat;
+        }
+    }
+
+    @media (min-width: 900px) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        background: url('./images/phone3back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/phone3-2back.png') center/cover no-repeat;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        background: url('./images/phone4back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/phone4-2back.png') center/cover no-repeat;
+        }
+    }
+}
+
+
+
+
+.PHONE .main--div__TEXT {
+    margin: 0 9.6vw 5.33vw 0;
+
+    @media (min-width: 600px) {
+        margin: 0 44.53vw 4.17vw 0;
+    }
+
+    @media (min-width: 900px) {
+        margin: 0 5.77vw 3.08vw 0;
+    }
+
+    @media (min-width: 1040px) {
+        margin: 0 60px 32px 0;
+    }
+
+    @media (min-width: 1200px) {
+        margin: 0 4vw 5.38vw 0;
+    }
+
+    @media (min-width: 1320px) {
+        margin: 0 97px 71px 0;
+    }
+}
+
+
+
+
+.PHONE .main--p {
+    @media (min-width: 600px) {
+        margin-bottom: 7.03vw;
+    }
+
+    @media (min-width: 900px) {
+        margin-bottom: 5.19vw;
+    }
+
+    @media (min-width: 1040px) {
+        margin-bottom: 54px;
+    }
+
+    @media (min-width: 1200px) {
+        margin-bottom: 2.42vw;
+    }
+
+    @media (min-width: 1200px) {
+        margin-bottom: 32px;
+    }
+    
+}
+
+
+
+
+.main--picture__PHONE {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 39.73vw;
+
+    @media (min-width: 600px) {
+        width: 37.37vw;
+    }
+
+    @media (min-width: 900px) {
+        width: 20.87vw;
+    }
+
+    @media (min-width: 1040px) {
+        width: 217px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 9.45vw;
+    }
+
+    @media (min-width: 1320px) {
+        width: 125px;
+    }
+}
+
+
+
+
+/* --- *** MERS *** --- */
+
+.MERS {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    background: url('./images/mers1back.png') center/cover no-repeat;
+    @media (min-resolution: 2dppx) {
+        background: url('./images/mers1-2back.png') center/cover no-repeat;
+    }
+
+    @media (min-width: 600px) {
+        background: url('./images/mers2back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/mers2-2back.png') center/cover no-repeat;
+        }
+    }
+
+    @media (min-width: 900px) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        background: url('./images/mers3back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/mers3-2back.png') center/cover no-repeat;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        background: url('./images/mers4back.png') center/cover no-repeat;
+        @media (min-resolution: 2dppx) {
+            background: url('./images/mers4-2back.png') center/cover no-repeat;
+        }
+    }
+}
+
+
+
+
+.MERS .main--div__TEXT {
+    margin: 0 9.33vw 4.27vw 0;
+
+    @media (min-width: 600px) {
+        margin: 0 44.53vw 4.17vw 0;
+    }
+
+    @media (min-width: 900px) {
+        margin: 0 5.77vw 3.08vw 0;
+    }
+
+    @media (min-width: 1040px) {
+        margin: 0 60px 32px 0;
+    }
+
+    @media (min-width: 1200px) {
+        margin: 0 3vw auto 0;
+    }
+
+    @media (min-width: 1320px) {
+        margin: 0 69px auto 0;
+    }
+}
+
+
+
+
+.MERS .main--p {
+    margin-bottom: 4vw;
+
+    @media (min-width: 600px) {
+        margin-bottom: 4.17vw;
+    }
+
+    @media (min-width: 900px) {
+        margin-bottom: 3.125vw;
+    }
+
+    @media (min-width: 1040px) {
+        margin-bottom: 32px;
+    }
+
+    @media (min-width: 1200px) {
+        margin-bottom: 2.42vw;
+    }
+
+    @media (min-width: 1320px) {
+        margin-bottom: 32px;
+    }
+}
+
+
+
+
+.MERS .main--button {
+    @media (min-width: 1200px) {
+        width: 119px;
+    }
+}
+
+
+
+
+.main--picture__MERS {
+    position: absolute;
+    z-index: 1;
+    right: 2.13vw;
+    bottom: 0.5vw;
+    width: 39.73vw;
+    pointer-events: none;
+
+    @media (min-width: 600px) {
+        right: 2.6vw;
+        bottom: 0.5vw;
+        width: 37.37vw;
+    }
+
+    @media (min-width: 900px) {
+        right: 0.5vw;
+        bottom: 0.5vw;
+        width: 20.87vw;
+    }
+
+    @media (min-width: 1040px) {
+        right: 10px;
+        bottom: 10px;
+        width: 217px;
+    }
+
+    @media (min-width: 1200px) {
+        position: relative;
+        inset: 0 0 4.55vw -2.1vw;
+        width: 27.5vw;
+    }
+
+    @media (min-width: 1320px) {
+        inset: 0 0 60px -30px;
+        width: 413px;
+    }
+}
